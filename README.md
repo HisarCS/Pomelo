@@ -2,7 +2,7 @@
 kore
 
 ## Step 1 - Install OpenCV
-You can install OpenCV on your Raspberry Pi by following this guide: https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/
+You can install OpenCV on your Raspberry Pi by following this guide: https://www.pyimagesearch.com/2018/09/19/pip-install-opencv/
 
 ## Step 2 - Install pomelo
 Run these commands:  
