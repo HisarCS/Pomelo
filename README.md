@@ -1,11 +1,19 @@
 # pomelo
 kore
 
-kod ne işe yarar?
-ne yapıldı?
+## Step 1 - Install OpenCV
+You can install OpenCV on your Raspberry Pi by following this guide: https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/
 
-ne kullanıldı?
-rspi 3 , dc motorx2 , motor sürücü(drv8835) , picamera , buttonX2 , power bank
-opencv 3 (used for image processing)
-aruco ( beyaz siyah karelerin yerleşimine uygun olarak algılama )
-opencv'nin aruco librarysi ( aruco tanımlama )
+## Step 2 - Install pomelo
+Run these commands:
+cd ~
+git clone https://github.com/HisarCS/pomelo
+
+## Step 3 - Make the script executable
+Run these commands:
+cd ~/pomelo
+chmod +x run.sh
+
+## Step 4 - Run it!
+Now you can execute the script by this command:
+~/pomelo/run.sh
