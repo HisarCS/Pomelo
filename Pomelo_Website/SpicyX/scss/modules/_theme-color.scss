@@ -1,0 +1,502 @@
+
+// Theme color
+
+
+.scrollToTop {
+	background-color: $theme-color;
+	border: 2px solid $theme-color;
+}
+
+.mu-readmore-btn{
+	color: $theme-color;	
+	&::after{
+		border: 2px solid $theme-color;		
+	}	
+	&:hover,
+	&:focus{
+		background-color: $theme-color;		
+		&::after{
+			border-color: $theme-color;			
+		}
+					
+	}
+}
+.mu-browsmore-btn{
+	color: $theme-color;
+	&:hover,
+	&:focus{
+		background-color: $theme-color;		
+		border-color: $theme-color;
+	}
+}
+.mu-send-btn{
+	&:hover,
+	&:focus{
+		background-color: $theme-color;
+		border-color: $theme-color;
+	}
+}
+.mu-main-navbar{
+
+	.mu-main-nav{		
+		li{
+			a{
+				&:hover,
+				&:focus{
+					color: $theme-color;
+				}
+			}
+		}		
+	}	
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {  
+  color: $theme-color;
+}
+#mu-slider{
+	.mu-slider-area{
+		.mu-top-slider{
+			.mu-top-slider-single{				
+				.mu-top-slider-content{					
+					.mu-slider-small-title{
+						color: $theme-color;																		
+					}
+				}
+			}			
+			.slick-prev, 
+			.slick-next {				
+				&:hover,
+				&:focus{
+					border-color: $theme-color;					
+					background-color: $theme-color;										
+				}
+			}			
+		}
+	}
+}
+#mu-about-us{
+	.mu-about-us-area{
+		.mu-about-us-left{			
+			ul{
+				li{					
+					&:before{
+						color: $theme-color;						
+					}
+				}
+			}
+		}
+	}
+}
+.mu-title{
+	.mu-subtitle{
+		color: $theme-color;		
+	}
+	
+	i{
+		color: $theme-color;		
+	}
+	.mu-title-bar{				
+		&::before{
+			background-color: $theme-color;						
+		}
+		&::after{
+			background-color: $theme-color;						
+		}
+	}
+
+}
+#mu-restaurant-menu{
+	.mu-restaurant-menu-area{
+		.mu-restaurant-menu-content{
+			.mu-restaurant-menu{
+				border-bottom: 1px solid $theme-color;
+				li{
+					a{								
+						background-color: $theme-color;																
+						&:hover,
+						&:focus{
+							border-color: $theme-color $theme-color transparent;
+						}
+					}
+				}
+				.active{
+					a,
+					a:hover,
+					a:focus{						
+						color: $theme-color;
+						border-color: $theme-color $theme-color transparent;
+					}
+				}
+			}
+			.mu-tab-content-area{				
+				.mu-menu-item-nav{
+					li{
+						.media{
+							.media-body{
+								.media-heading{
+									a{										
+										&:hover,
+										&:focus{
+											color: $theme-color;
+										}
+									}
+								}
+								.mu-menu-price{									
+									color: $theme-color;																		
+								}								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#mu-reservation{
+	.mu-reservation-area{
+		.mu-reservation-content{
+			h3{
+				border-bottom: 2px solid $theme-color;									
+			}			
+			.mu-reservation-form{
+				input[type="text"],
+				input[type="email"]{
+					&:focus{
+						border-color: $theme-color;
+					}
+				}
+				select{
+					&:focus{
+						border-color: $theme-color;
+					}
+				}
+				textarea{
+					&:focus{					
+						border-color: $theme-color;
+					}
+				}			
+				
+			}
+		}
+	}
+}
+.datepicker .datepicker-switch, .datepicker .prev, .datepicker .next, .datepicker tfoot tr th { 
+  &:hover{
+  	background-color: $theme-color;
+  }
+}
+.datepicker table tr td.day:hover{
+	background-color: $theme-color;
+}
+#mu-gallery{
+	.mu-gallery-area{
+		.mu-gallery-content{
+			.mu-gallery-top{				
+				ul{
+					li{	
+						&:hover,
+						&:focus{
+							background-color: $theme-color;							
+							&::after{
+								border-color: $theme-color;								
+							}														
+						}
+					}
+					.active{
+						background-color: $theme-color;																	
+					}
+				}
+			}
+				
+		}		
+	}
+}
+#mu-client-testimonial{	
+	.mu-client-testimonial-area{
+		.mu-testimonial-content{
+			.mu-testimonial-slider{				
+				li{
+					.mu-testimonial-single{						
+						.mu-testimonial-bio{							
+							p{
+								font-family: $heading-font;								
+							}							
+						}						
+					}					
+				}
+				.slick-dots{					
+					li{
+						border: 2px solid $theme-color;						
+					}
+					.slick-active{
+						background-color: $theme-color;						
+					}
+				}
+			}
+		}
+	}
+}
+#mu-subscription{
+	background-color: $theme-color;		
+	.mu-subscription-area{
+		.mu-subscription-form{			
+			button[type="submit"]{				
+				&:hover{					
+					color: $theme-color;
+				}
+			}
+		}		
+	}	
+}
+#mu-chef{
+	.mu-chef-area{
+		.mu-chef-content{
+			.mu-chef-nav{
+				.slick-list {
+					li{
+						.mu-single-chef{														
+							.mu-single-chef-info{
+								h4{
+									color: $theme-color;								
+								}								
+							}
+							.mu-single-chef-social{
+								a{
+									border: 1px solid $theme-color;
+									color: $theme-color;
+									&:hover,
+									&:focus{
+										background-color: $theme-color;										
+									}
+								}
+							}
+						}
+					}
+				}
+				.slick-dots{
+					li{
+						border: 2px solid $theme-color;						
+					}
+					.slick-active{
+						background-color: $theme-color;						
+					}
+				}
+			}
+		}
+	}
+}
+.mu-news-single{	
+	h3{
+		&:hover{
+			color: $theme-color;
+		}
+		a{
+			&:hover,
+			&:focus{
+				color: $theme-color;
+			}
+		}
+	}		
+}
+#mu-contact{
+	.mu-contact-area{
+		.mu-contact-content{
+			.mu-contact-left{											
+				.mu-contact-form{
+					input[type="text"],
+					input[type="email"]{						
+						&:focus{							
+							border-color: $theme-color;
+						}
+					}
+					textarea{
+						&:focus{							
+							border-color: $theme-color;
+						}
+					}
+				}
+			}
+			.mu-contact-right{
+				.mu-contact-widget{
+					h3{
+						color: $theme-color;
+					}
+				}
+			}
+		}
+	}
+}
+#mu-footer{
+	.mu-footer-area{
+		.mu-footer-social{			
+			a{
+				&:hover,
+				&:hover{
+					background-color: $theme-color;					
+				}
+			}
+		}
+		.mu-footer-copyright{
+			p{				
+				a{
+					&:hover,
+					&:focus{
+						color: $theme-color;
+					}
+				}
+			}
+		}				
+	}	
+}
+#mu-blog-banner{
+	.mu-blog-banner-area{		
+		.breadcrumb{
+			li{
+				color: $theme-color;
+				a{
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+#mu-blog{
+	.mu-blog-area{
+		.mu-blog-pagination-area{
+			.mu-blog-pagination{
+				li{										
+					a{
+						&:hover,
+						&:focus{
+							color: $theme-color;
+						}
+					}
+				}
+			}
+		}
+		.mu-blog-sidebar{
+			.mu-blog-sidebar-single{				
+				h3{
+					&:after{
+						background-color: $theme-color;						
+					}
+				}
+				.mu-catg-nav{
+					&>li{
+						a{
+							&:hover{
+								color: $theme-color;
+							}
+						}
+					}
+				}				
+				.tag-cloud{
+					a{
+						&:hover,
+						&:focus{
+							color: $theme-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.mu-blog-details{
+	.mu-news-single{
+		&>h2{
+			font-size: 28px;
+			padding: 15px 20px;
+			a{
+				@include transition(all 0.5s);
+				&:hover{
+					color: $theme-color;
+				}
+			}
+		}
+		.mu-news-single-content{	
+			blockquote{				
+				border-color: $theme-color;				
+			}
+		}
+		.mu-news-single-bottom{
+			.mu-news-single-tag{
+				.mu-news-single-tagnav{					
+					li{
+						a{
+							&:hover,
+							&:focus{
+								color: $theme-color;
+							}
+						}
+					}
+				}
+			}
+			.mu-news-single-social{
+				.mu-news-single-socialnav{					
+					li{
+						a{
+							&:hover,
+							&:focus{
+								color: $theme-color;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}
+.mu-blog-single-navigation{	
+	a{
+		&:hover,
+		&:focus{
+			color: $theme-color;			
+		}
+	}
+}
+.mu-comments-area{
+	.comments{
+		.commentlist {
+			li {			  	
+			  	.comments-date {
+				  	color: $theme-color;					
+				}
+				.reply-btn {
+					background-color: $theme-color;										
+				}
+			}			
+		}		
+		.comments-pagination li a {			
+			&:hover,
+			&:focus{				
+				color: $theme-color;				
+			}
+		}
+	}
+}
+#respond {
+	input[type="text"],
+	input[type="email"],
+	input[type="url"] {				
+		&:focus{
+			border-color: $theme-color;
+		}	
+	}
+	textarea {
+	 	&:focus{
+			border-color: $theme-color;
+		}	  	
+	}
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: $theme-color;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {	 
+  color: $theme-color;
+}
+
+
+
+

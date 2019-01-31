@@ -1,0 +1,377 @@
+
+// RESPONSIVE 
+
+
+@media(max-width:1199px ){
+	.mu-main-navbar .mu-main-nav li a {	 
+	  padding-left: 10px;
+	  padding-right: 10px;
+	}
+	#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single img {
+	  width: auto;
+	}
+	#mu-subscription .mu-subscription-area {	 
+	  padding: 0 50px;	  
+	}
+	#mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-list li .mu-single-chef .mu-single-chef-social {	
+	  padding: 23px 10px;
+	}
+	#mu-blog-banner .mu-blog-banner-area {	 
+	  min-height: 300px;	  
+	}
+	
+}	
+
+
+@media(max-width:991px ){	
+	.mu-main-navbar .mu-main-nav li a {
+	  padding-left: 5px;
+	  padding-right: 5px;
+	  font-size: 14px;
+	}
+	.mu-main-navbar .navbar-header .navbar-brand {
+	  height: 30px;	  	  	  
+	  width: 115px;
+	}
+	.mu-main-navbar .navbar-header .navbar-brand-small {
+	  height: 25px;
+	  margin-top: 13px;
+	  width: 110px;
+	}
+	.mu-abtus-slider .slick-slide img {
+	  display: block;
+	  width: 100%;
+	}
+	#mu-subscription .mu-subscription-area {
+	  padding: 0 5%;
+	}
+	#mu-subscription .mu-subscription-area .mu-subscription-form input[type="text"] {	 
+	  width: 70%;
+	}
+	#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right {	 
+	  margin-top: 50px;
+	  padding: 0;	  
+	}
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-img {
+	  height: 200px;	 
+	}
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-info {	 
+	  padding-top: 32.3%;	
+	}
+	#mu-client-testimonial .mu-client-testimonial-area .mu-testimonial-content .mu-testimonial-slider li .mu-testimonial-single {	 
+	  padding: 0 60px;	 
+	}
+	#mu-client-testimonial .mu-client-testimonial-area .mu-testimonial-content .mu-testimonial-slider li .mu-testimonial-single .mu-testimonial-info p::before {	 
+	  top: 40%;	
+	}
+	#mu-latest-news .mu-latest-news-area .mu-latest-news-content .mu-news-single {	 
+	  margin-top: 25px;
+	}
+	#mu-counter .mu-counter-overlay .mu-counter-area .mu-counter-nav li .mu-single-counter p {
+	  font-size: 15px;
+	}
+	#mu-blog-banner .mu-blog-banner-area {
+	  min-height: 250px;
+	}
+	#mu-error .mu-error-area p {	 
+	  padding: 0 30px;
+	}
+	#mu-error .mu-error-area {	 
+	  margin-top: 0;
+	  padding: 50px 100px 80px;	  
+	}
+}
+
+
+@media(max-width:767px ){
+
+	.navbar-default .navbar-toggle {
+	  border-color: #fff;
+	  border-radius: 0px;
+	}
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	  background-color: #fff;
+	}	
+	.mu-main-navbar .mu-main-nav {	 
+	  background-color: rgba(0,0,0,0.8);
+	  text-align: center;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+	  background-color: #fff;
+	}
+	#mu-counter .mu-counter-overlay .mu-counter-area .mu-counter-nav li {	 
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  border-right: none;
+	}
+	#mu-blog-banner .mu-blog-banner-area {
+	  min-height: 275px;	  
+	}
+	#mu-blog .mu-blog-area .mu-blog-sidebar {	 
+	  margin-top: 50px;	  
+	}
+	#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single .mu-sidebar-add img {	 
+	  width: 100%;
+	}
+
+
+}
+
+@media(max-width:640px){
+	.navbar-default .navbar-toggle {
+	  border-color: #fff;
+	  border-radius: 0px;
+	}
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	  background-color: #fff;
+	}
+	#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-title {	 
+	  font-size: 50px;
+	  line-height: 75px;
+	}
+	
+	.mu-main-navbar .mu-main-nav {	 
+	  background-color: rgba(0,0,0,0.8);
+	  text-align: center;
+	}
+	.mu-main-navbar .mu-main-nav li a {
+	  font-size: 18px;
+	}	
+	#mu-reservation .mu-reservation-area .mu-reservation-content {	 
+	  padding: 0 50px;	  
+	}
+	#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li a {	  
+	  font-size: 16px;
+	  margin: 0 5px;	  
+	}	
+	#mu-reservation .mu-reservation-area .mu-reservation-content p {	 
+	  padding: 0;	  
+	}
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-top ul li {	  
+	  margin: 0 5px;	  
+	}
+	#mu-subscription .mu-subscription-area .mu-subscription-form input[type="text"] {
+	  width: 65%;
+	}
+	#mu-subscription .mu-subscription-area .mu-subscription-form .mu-readmore-btn {	 
+	  width: 30%;
+	}
+	#mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-list li .mu-single-chef .mu-single-chef-social a {	 
+	  margin: 0 3px;
+	  padding: 3px 0;	  
+	  width: 30px;
+	}
+	#mu-blog-banner .mu-blog-banner-area {
+	  min-height: 220px;
+	}
+
+}	
+
+
+@media(max-width:480px ){
+	#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content {
+	  left: 5%;	 
+	  right: 5%;	  
+	  top: 15%;	  
+	}	
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery {	 	  
+	  width: 50%;
+	}
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-info {
+	  padding-top: 35.5%;
+	}
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-top ul li {	 
+	  margin-bottom: 10px;
+	}
+	#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single img {
+	  width: 100%;
+	}
+	#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content {	 
+	  display: none;
+	}
+	#mu-slider .mu-slider-area .mu-top-slider .slick-prev, #mu-slider .mu-slider-area .mu-top-slider .slick-next {	 
+	  opacity: 0;	  
+	}
+	#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li a {
+	  font-size: 14px;
+	  margin: 0 2px;
+	}
+	.mu-title {	 
+	  margin-bottom: 0;	  
+	}
+	#mu-client-testimonial .mu-client-testimonial-area .mu-testimonial-content .mu-testimonial-slider li .mu-testimonial-single {
+	  padding: 0;
+	}
+	#mu-subscription .mu-subscription-area .mu-subscription-form input[type="text"] {
+	  width: 100%;
+	  margin-bottom: 20px;
+	}
+	#mu-subscription .mu-subscription-area {
+	  padding: 0;
+	  text-align: center;
+	}
+	#mu-subscription .mu-subscription-area .mu-subscription-form .mu-readmore-btn {
+	  width: auto;
+	}
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery {
+	  width: 100%;
+	}
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-info {
+	  padding-top: 15.5%;
+	}
+	#mu-blog-banner .mu-blog-banner-area {
+	  min-height: 150px;
+	}
+	.mu-news-single h3 {
+	  font-size: 20px;
+	  line-height: 25px;
+	  margin-bottom: 20px;	 
+	}
+	#mu-blog .mu-blog-area .mu-blog-pagination-area {	
+	  text-align: center;	  
+	}
+	.mu-blog-details .mu-news-single > h2 {
+	  font-size: 20px;
+	  padding: 15px 15px;
+	  line-height: 30px;
+	}
+	#respond input[type="text"], #respond input[type="email"], #respond input[type="url"] {	 
+	  width: 100%;
+	}
+	#mu-error .mu-error-area {	 
+	  padding: 30px 20px 60px;
+	}
+	#mu-error .mu-error-area p {
+	  padding: 0;
+	  font-size: 16px;
+	}
+	#mu-error .mu-error-area h2 {
+	  font-size: 130px;
+	  line-height: 130px;	 	  	  
+	}
+	#mu-map {	 
+	  height: 350px;	  
+	}
+	#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li {
+	  margin-bottom: 10px;
+	}
+	.mu-blog-related-post .mu-blog-related-post-area {	 
+	  margin-top: 30px;	  
+	}
+
+}
+
+
+@media(max-width:360px ){	
+	#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li {	 
+	  margin-bottom: 12px;
+	}
+	#mu-about-us {	 
+	  padding: 100px 0 50px;	  
+	}
+	#mu-restaurant-menu {	 
+	  padding-bottom: 0px;
+	}	
+	#mu-reservation .mu-reservation-area .mu-reservation-content {
+	  padding: 0;
+	}
+	.mu-title h2 {	 
+	  font-size: 28px;	  
+	}
+	#mu-client-testimonial .mu-client-testimonial-area .mu-testimonial-content .mu-testimonial-slider li .mu-testimonial-single .mu-testimonial-info p {	 
+	  font-size: 16px;	
+	  line-height: 24px;	  	  
+	}
+	#mu-latest-news .mu-latest-news-area .mu-latest-news-content .mu-news-single h3 {
+	  line-height: 24px;
+	  margin-bottom: 20px;
+	  padding: 0 5px;	  
+	  font-size: 18px;
+	}
+	#mu-latest-news .mu-latest-news-area .mu-latest-news-content .mu-news-single .mu-news-single-content .mu-meta-nav li {	 
+	  padding: 0 5px;
+	}
+	#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right {
+	  text-align: center;
+	}
+	#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right .mu-contact-widget address {	 
+	  text-align: left;
+	}
+	#mu-contact {	 
+	  padding: 100px 0 50px;	  
+	}
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-info {
+	  padding-top: 22.5%;
+	}
+	#mu-footer .mu-footer-area .mu-footer-social a {	 
+	  font-size: 18px;
+	  margin: 5px;
+	  padding: 5px;	  
+	  width: 40px;
+	}
+	.mu-news-single h3 {
+	  font-size: 18px;
+	  line-height: 22px;	 
+	  padding: 0 10px;
+	}
+	.mu-comments-area .comments .commentlist li .reply-btn {	 
+	  font-size: 12px;
+	  line-height: 12px;
+	  padding: 5px 10px;
+	  right: 8px;
+	  top: 8px;
+	}
+	.mu-comments-area .comments .commentlist .children {
+	  margin-left: 0;
+	}
+	.media-left, .media > .pull-left {
+	  padding-right: 0;
+	}
+	.mu-comments-area .comments .commentlist li .news-img {
+	  margin-right: 10px;
+	}
+	.mu-comments-area .comments .commentlist li .media-body p {	 
+	  font-size: 14px;
+	}
+	#mu-blog-banner .mu-blog-banner-area {	 
+	  padding: 20% 0;
+	}
+	#mu-error .mu-error-area h2 {
+	  font-size: 80px;
+	  line-height: 80px;
+	}
+	#mu-error .mu-error-area p {
+	  font-size: 14px;	  
+	}
+	#mu-error .mu-error-area {
+	  padding: 0 15px 30px;
+	}
+	#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-tab-content-area .mu-menu-item-nav li .media .media-left {
+	  height: 100px;
+	  width: 100px;
+	  margin-right: 10px;
+	  float: left;
+	}
+	#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-tab-content-area .mu-menu-item-nav li .media .media-left a img {
+	  height: 100%;
+	  width: 100%;
+	}
+	#mu-map {	 
+	  height: 250px;	  
+	}
+}
+
+
+@media(max-width:320px ){
+	#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-body .mu-single-gallery .mu-single-gallery-item .mu-single-gallery-info {
+	  padding-top: 25.5%;
+	}
+	#mu-blog-banner .mu-blog-banner-area {
+	  padding: 25% 0;
+	}
+	.mu-news-single .mu-news-single-content .mu-meta-nav li {   
+	    border-right: none;
+	}
+
+
+}

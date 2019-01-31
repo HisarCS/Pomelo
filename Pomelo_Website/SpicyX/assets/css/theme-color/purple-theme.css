@@ -1,0 +1,263 @@
+
+/*=======================================
+Template Design By MarkUps.
+Author URI : http://www.markups.io/
+========================================*/
+.scrollToTop {
+  background-color: #c762cb;
+  border: 2px solid #c762cb;
+}
+
+.mu-readmore-btn {
+  color: #c762cb;
+}
+.mu-readmore-btn::after {
+  border: 2px solid #c762cb;
+}
+.mu-readmore-btn:hover, .mu-readmore-btn:focus {
+  background-color: #c762cb;
+}
+.mu-readmore-btn:hover::after, .mu-readmore-btn:focus::after {
+  border-color: #c762cb;
+}
+
+.mu-browsmore-btn {
+  color: #c762cb;
+}
+.mu-browsmore-btn:hover, .mu-browsmore-btn:focus {
+  background-color: #c762cb;
+  border-color: #c762cb;
+}
+
+.mu-send-btn:hover, .mu-send-btn:focus {
+  background-color: #c762cb;
+  border-color: #c762cb;
+}
+
+.mu-main-navbar .mu-main-nav li a:hover, .mu-main-navbar .mu-main-nav li a:focus {
+  color: #c762cb;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #c762cb;
+}
+
+#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-small-title {
+  color: #c762cb;
+}
+#mu-slider .mu-slider-area .mu-top-slider .slick-prev:hover, #mu-slider .mu-slider-area .mu-top-slider .slick-prev:focus,
+#mu-slider .mu-slider-area .mu-top-slider .slick-next:hover,
+#mu-slider .mu-slider-area .mu-top-slider .slick-next:focus {
+  border-color: #c762cb;
+  background-color: #c762cb;
+}
+
+#mu-about-us .mu-about-us-area .mu-about-us-left ul li:before {
+  color: #c762cb;
+}
+
+.mu-title .mu-subtitle {
+  color: #c762cb;
+}
+.mu-title i {
+  color: #c762cb;
+}
+.mu-title .mu-title-bar::before {
+  background-color: #c762cb;
+}
+.mu-title .mu-title-bar::after {
+  background-color: #c762cb;
+}
+
+#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu {
+  border-bottom: 1px solid #c762cb;
+}
+#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li a {
+  background-color: #c762cb;
+}
+#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li a:hover, #mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li a:focus {
+  border-color: #c762cb #c762cb transparent;
+}
+#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu .active a,
+#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu .active a:hover,
+#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu .active a:focus {
+  color: #c762cb;
+  border-color: #c762cb #c762cb transparent;
+}
+#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-tab-content-area .mu-menu-item-nav li .media .media-body .media-heading a:hover, #mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-tab-content-area .mu-menu-item-nav li .media .media-body .media-heading a:focus {
+  color: #c762cb;
+}
+#mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-tab-content-area .mu-menu-item-nav li .media .media-body .mu-menu-price {
+  color: #c762cb;
+}
+
+#mu-reservation .mu-reservation-area .mu-reservation-content h3 {
+  border-bottom: 2px solid #c762cb;
+}
+#mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form input[type="text"]:focus,
+#mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form input[type="email"]:focus {
+  border-color: #c762cb;
+}
+#mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form select:focus {
+  border-color: #c762cb;
+}
+#mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form textarea:focus {
+  border-color: #c762cb;
+}
+
+.datepicker .datepicker-switch:hover, .datepicker .prev:hover, .datepicker .next:hover, .datepicker tfoot tr th:hover {
+  background-color: #c762cb;
+}
+
+.datepicker table tr td.day:hover {
+  background-color: #c762cb;
+}
+
+#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-top ul li:hover, #mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-top ul li:focus {
+  background-color: #c762cb;
+}
+#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-top ul li:hover::after, #mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-top ul li:focus::after {
+  border-color: #c762cb;
+}
+#mu-gallery .mu-gallery-area .mu-gallery-content .mu-gallery-top ul .active {
+  background-color: #c762cb;
+}
+
+#mu-client-testimonial .mu-client-testimonial-area .mu-testimonial-content .mu-testimonial-slider li .mu-testimonial-single .mu-testimonial-bio p {
+  font-family: "Open Sans", sans-serif;
+}
+#mu-client-testimonial .mu-client-testimonial-area .mu-testimonial-content .mu-testimonial-slider .slick-dots li {
+  border: 2px solid #c762cb;
+}
+#mu-client-testimonial .mu-client-testimonial-area .mu-testimonial-content .mu-testimonial-slider .slick-dots .slick-active {
+  background-color: #c762cb;
+}
+
+#mu-subscription {
+  background-color: #c762cb;
+}
+#mu-subscription .mu-subscription-area .mu-subscription-form button[type="submit"]:hover {
+  color: #c762cb;
+}
+
+#mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-list li .mu-single-chef .mu-single-chef-info h4 {
+  color: #c762cb;
+}
+#mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-list li .mu-single-chef .mu-single-chef-social a {
+  border: 1px solid #c762cb;
+  color: #c762cb;
+}
+#mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-list li .mu-single-chef .mu-single-chef-social a:hover, #mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-list li .mu-single-chef .mu-single-chef-social a:focus {
+  background-color: #c762cb;
+}
+#mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-dots li {
+  border: 2px solid #c762cb;
+}
+#mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-dots .slick-active {
+  background-color: #c762cb;
+}
+
+.mu-news-single h3:hover {
+  color: #c762cb;
+}
+.mu-news-single h3 a:hover, .mu-news-single h3 a:focus {
+  color: #c762cb;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .mu-contact-form input[type="text"]:focus,
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .mu-contact-form input[type="email"]:focus {
+  border-color: #c762cb;
+}
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .mu-contact-form textarea:focus {
+  border-color: #c762cb;
+}
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right .mu-contact-widget h3 {
+  color: #c762cb;
+}
+
+#mu-footer .mu-footer-area .mu-footer-social a:hover, #mu-footer .mu-footer-area .mu-footer-social a:hover {
+  background-color: #c762cb;
+}
+#mu-footer .mu-footer-area .mu-footer-copyright p a:hover, #mu-footer .mu-footer-area .mu-footer-copyright p a:focus {
+  color: #c762cb;
+}
+
+#mu-blog-banner .mu-blog-banner-area .breadcrumb li {
+  color: #c762cb;
+}
+#mu-blog-banner .mu-blog-banner-area .breadcrumb li a {
+  color: #fff;
+}
+
+#mu-blog .mu-blog-area .mu-blog-pagination-area .mu-blog-pagination li a:hover, #mu-blog .mu-blog-area .mu-blog-pagination-area .mu-blog-pagination li a:focus {
+  color: #c762cb;
+}
+#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single h3:after {
+  background-color: #c762cb;
+}
+#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single .mu-catg-nav > li a:hover {
+  color: #c762cb;
+}
+#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single .tag-cloud a:hover, #mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single .tag-cloud a:focus {
+  color: #c762cb;
+}
+
+.mu-blog-details .mu-news-single > h2 {
+  font-size: 28px;
+  padding: 15px 20px;
+}
+.mu-blog-details .mu-news-single > h2 a {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.mu-blog-details .mu-news-single > h2 a:hover {
+  color: #c762cb;
+}
+.mu-blog-details .mu-news-single .mu-news-single-content blockquote {
+  border-color: #c762cb;
+}
+.mu-blog-details .mu-news-single .mu-news-single-bottom .mu-news-single-tag .mu-news-single-tagnav li a:hover, .mu-blog-details .mu-news-single .mu-news-single-bottom .mu-news-single-tag .mu-news-single-tagnav li a:focus {
+  color: #c762cb;
+}
+.mu-blog-details .mu-news-single .mu-news-single-bottom .mu-news-single-social .mu-news-single-socialnav li a:hover, .mu-blog-details .mu-news-single .mu-news-single-bottom .mu-news-single-social .mu-news-single-socialnav li a:focus {
+  color: #c762cb;
+}
+
+.mu-blog-single-navigation a:hover, .mu-blog-single-navigation a:focus {
+  color: #c762cb;
+}
+
+.mu-comments-area .comments .commentlist li .comments-date {
+  color: #c762cb;
+}
+.mu-comments-area .comments .commentlist li .reply-btn {
+  background-color: #c762cb;
+}
+.mu-comments-area .comments .comments-pagination li a:hover, .mu-comments-area .comments .comments-pagination li a:focus {
+  color: #c762cb;
+}
+
+#respond input[type="text"]:focus,
+#respond input[type="email"]:focus,
+#respond input[type="url"]:focus {
+  border-color: #c762cb;
+}
+#respond textarea:focus {
+  border-color: #c762cb;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #c762cb;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #c762cb;
+}
+
+/*=======================================
+Template Design By MarkUps.
+Author URI : http://www.markups.io/
+========================================*/

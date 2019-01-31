@@ -1,0 +1,52 @@
+
+// FOOTER
+
+
+#mu-footer{
+	background-color: #444;
+	display: inline;
+	float: left;	
+	padding: 50px 0;
+	width: 100%;
+	.mu-footer-area{
+		display: inline;
+		float: left;
+		width: 100%;
+		text-align: center;		
+		.mu-footer-social{
+			display: inline;
+			float: left;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 10px;
+			a{
+				background-color: #555;
+				color: #fff;
+				display: inline-block;
+				font-size: 20px;
+				height: 40px;
+				line-height: 32px;
+				margin: 5px;
+				padding: 5px;
+				text-align: center;
+				width: 50px;
+				@include transition(all 0.5s);				
+			}
+		}
+		.mu-footer-copyright{
+			display: inline;
+			float: left;
+			width: 100%;
+			p{
+				font-family: $heading-font;
+				font-size: 16px;
+				letter-spacing: 0.5px;
+				color: #fff;
+
+				a{
+					color: #fff;					
+				}
+			}
+		}				
+	}	
+}
