@@ -3,6 +3,7 @@ import cv2.aruco as aruco
 from time import sleep
 from pololu_drv8835_rpi import motors
 import threading
+import RPi.GPIO as g
 #sudo modprobe bcm2835-v4l2 //this makes picamera visible
 
 commands = []
@@ -13,6 +14,8 @@ def setup():
     aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_250)
     parameters = aruco.DetectorParameters_create()
     motors.setSpeeds(0, 0)
+    g.setmode(g.BCM)
+    g.setup(26, g.IN, pull_up_down=g.PUD_DOWN)
 
 def forward(n):
     motors.setSpeeds(240, 240) #max: 480
@@ -48,28 +51,26 @@ def takePic():
         print(i)
         
     #if ids is not None and len(ids) > 0:print(ids.tolist()) #0, 18, 20, 39
-    #cv2.imshow('frame',frame)
 
 def run():
     global commands
     n = 1
     for i in commands:
-        if i == 6:
+        if i == 12:
             back(n)
             n = 1
-        if i == 8:
+        if i == 13:
             forward(n)
             n = 1
         if i == 9: n = 3
 
 def takeInput():
     while(1):
-        try: n = int(input("1 - take pic\n2 - run\n"))
-        except: continue
-        if n == 1:
+        if g.input(26):
+            print("ey")
             takePic()
-        if n == 2:
             run()
+        sleep(0.2)
     
 
 setup()
