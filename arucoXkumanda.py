@@ -4,9 +4,16 @@ from time import sleep
 from pololu_drv8835_rpi import motors
 import threading
 import RPi.GPIO as g
+import PiWarsTurkiyeRobotKiti2019
 from PiWarsTurkiyeRobotKiti2019 import HizlandirilmisPiKamera
 #sudo modprobe bcm2835-v4l2 //this makes picamera visible
 
+motors = PiWarsTurkiyeRobotKiti2019.MotorKontrol()
+controller = PiWarsTurkiyeRobotKiti2019.Kumanda()
+controller.dinlemeyeBasla()
+xy = controller.solVerileriOku()
+xz = controller.sagVerileriOku()
+xx = controller.butonlariOku()
 commands = []
 
 def setup():
@@ -15,20 +22,28 @@ def setup():
     camera.veriOkumayaBasla()
     aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_250)
     parameters = aruco.DetectorParameters_create()
-    motors.setSpeeds(0, 0)
+    motors.hizlariAyarla(0, 0)
     g.setmode(g.BCM)
     g.setup(26, g.IN, pull_up_down=g.PUD_DOWN)
     print(g.input(26))
 
 def forward(n):
-    motors.setSpeeds(240, 240) #max: 480
+    motors.hizlariAyarla(240, 240) #max: 480
     sleep(n)
-    motors.setSpeeds(0, 0)
+    motors.hizlariAyarla(0, 0)
 
 def back(n):
-    motors.setSpeeds(-240, -240)
+    motors.hizlariAyarla(-240, -240)
     sleep(n)
-    motors.setSpeeds(0, 0)
+    motors.hizlariAyarla(0, 0)
+def right(n):
+    motors.hizlariAyarla(-240, 240)
+    sleep(n)
+    motors.hizlariAyarla(0, 0)
+def left(n):
+    motors.hizlariAyarla(240, -240)
+    sleep(n)
+    motors.hizlariAyarla(0, 0)
     
 def takePic():
     global commands, camera, aruco_dict, parameters
@@ -60,6 +75,12 @@ def run():
         if i == 0:
             forward(n)
             n = 1
+        if i == 1:
+            left(n)
+            n = 1
+        if i == 10:
+            right(n)
+            n = 1
         if i == 9: n = 3
 
 def takeInput():
@@ -70,6 +91,16 @@ def takeInput():
             print("ey")
             takePic()
             run()
+        while(xx != controller.butonlariOku() or xy != controller.sagVerileriOku() or xz != controller.solVerileriOku()):
+            lx, ly = controller.solVerileriOku()
+            rightSpeed = motors.kumandaVerisiniMotorVerilerineCevirme(lx, ly, True)
+            leftSpeed = motors.kumandaVerisiniMotorVerilerineCevirme(lx, ly, False)
+            print(lx," ", ly, " ", rightSpeed, " ", leftSpeed)
+            motors.hizlariAyarla(rightSpeed, leftSpeed)
+            sleep(0.3)
+            motors.hizlariAyarla(0, 0)
+            
+        
         sleep(0.2)
     
 

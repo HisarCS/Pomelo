@@ -29,6 +29,14 @@ def back(n):
     motors.setSpeeds(-240, -240)
     sleep(n)
     motors.setSpeeds(0, 0)
+def right(n):
+    motors.setSpeeds(240, -240)
+    sleep(n)
+    motors.setSpeeds(0, 0)
+def left(n):
+    motors.setSpeeds(-240, 240)
+    sleep(n)
+    motors.setSpeeds(0, 0)
     
 def takePic():
     global commands, camera, aruco_dict, parameters
@@ -59,6 +67,12 @@ def run():
             n = 1
         if i == 0:
             forward(n)
+            n = 1
+        if i == 1:
+            left(n)
+            n = 1
+        if i == 10:
+            right(n)
             n = 1
         if i == 9: n = 3
 
