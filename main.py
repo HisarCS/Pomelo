@@ -98,7 +98,7 @@ def takeInput():
     while (1):
         y = g.input (26)
         if (y == True):
-            print("ey")
+            print("button pressed")
             takePic ()
             run ()
         while (
