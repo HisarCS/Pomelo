@@ -3,11 +3,12 @@ import cv2.aruco as aruco
 from time import sleep
 from pololu_drv8835_rpi import motors
 import threading
-import RPi.GPIO as g
+import RPi.GPIO as GPIO
 import PiWarsTurkiyeRobotKiti2019
 from PiWarsTurkiyeRobotKiti2019 import HizlandirilmisPiKamera
 
 # sudo modprobe bcm2835-v4l2 //this makes picamera visible
+
 
 motors = PiWarsTurkiyeRobotKiti2019.MotorKontrol ()
 controller = PiWarsTurkiyeRobotKiti2019.Kumanda ()
@@ -25,32 +26,32 @@ def setup():
     aruco_dict = aruco.Dictionary_get (aruco.DICT_4X4_250)
     parameters = aruco.DetectorParameters_create ()
     motors.hizlariAyarla (0, 0)
-    g.setmode (g.BCM)
-    g.setup (26, g.IN, pull_up_down=g.PUD_DOWN)
-    print(g.input (26))
+    GPIO.setmode (GPIO.BCM)
+    GPIO.setup (26, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    print(GPIO.input (26))
 
 
-def forward(n):
+def forward(duration):
     motors.hizlariAyarla (240, 240)  # max: 480
-    sleep (n)
+    sleep (duration)
     motors.hizlariAyarla (0, 0)
 
 
-def back(n):
+def back(duration):
     motors.hizlariAyarla (-240, -240)
-    sleep (n)
+    sleep (duration)
     motors.hizlariAyarla (0, 0)
 
 
-def right(n):
+def right(duration):
     motors.hizlariAyarla (-240, 240)
-    sleep (n)
+    sleep (duration)
     motors.hizlariAyarla (0, 0)
 
 
-def left(n):
+def left(duration):
     motors.hizlariAyarla (240, -240)
-    sleep (n)
+    sleep (duration)
     motors.hizlariAyarla (0, 0)
 
 
@@ -59,6 +60,7 @@ def takePic():
     frame = camera.veriOku ()
 
     gray = cv2.cvtColor (frame, cv2.COLOR_BGR2GRAY)
+    
 
     ids = aruco.detectMarkers (gray, aruco_dict, parameters=parameters)[1]
 
@@ -77,35 +79,54 @@ def takePic():
 
 def run():
     global commands
-    n = 1
-    for i in commands:
-        if i == 11:
-            back (n)
-            n = 1
-        if i == 0:
-            forward (n)
-            n = 1
-        if i == 1:
-            left (n)
-            n = 1
-        if i == 10:
-            right (n)
-            n = 1
-        if i == 9: n = 3
+    duration = 1
+    if len(commands) >=1:
+        print(len(commands))
+        for i in range(len(commands)):
+            print(i)
+            arucoNumber = commands[i] 
+            if len(commands)-1>i:
+                arucoNumberSecond = commands[i+1]
+            else:
+                arucoNumberSecond = 1
+                print("no specified seconds")
+            if arucoNumber == 12:
+                if arucoNumberSecond <= 10:
+                    duration = arucoNumberSecond 
+                    print ("back", duration)
+                back (duration)  
+            if arucoNumber == 11:
+                if arucoNumberSecond <= 10:
+                    duration = arucoNumberSecond  
+                    print ("forward", duration)
+                forward (duration)
+            if arucoNumber == 14:
+                if arucoNumberSecond <= 10:
+                    duration = arucoNumberSecond  
+                left (duration)
+            if arucoNumber == 13:
+                if arucoNumberSecond <= 10:
+                    duration = arucoNumberSecond  
+                    print ("right", duration)
+                right (duration)
+            if arucoNumber == 15: duration = 3
+    
 
 
 def takeInput():
     while (1):
-        y = g.input (26)
+        y = GPIO.input (26)
         if (y == True):
             print("button pressed")
             takePic ()
+            
             run ()
         while (
                 xx != controller.butonlariOku () or xy != controller.sagVerileriOku () or xz != controller.solVerileriOku ()):
             lx, ly = controller.solVerileriOku ()
-            rightSpeed = motors.kumandaVerisiniMotorVerilerineCevirme (lx, ly, True)
-            leftSpeed = motors.kumandaVerisiniMotorVerilerineCevirme (lx, ly, False)
+            print(lx, ly)
+            rightSpeed, leftSpeed = motors.kumandaVerisiniMotorVerilerineCevirme (lx, ly)
+            #leftSpeed = motors.kumandaVerisiniMotorVerilerineCevirme (lx, ly, False)
             print(lx, " ", ly, " ", rightSpeed, " ", leftSpeed)
             motors.hizlariAyarla (rightSpeed, leftSpeed)
             sleep (0.3)
@@ -115,9 +136,13 @@ def takeInput():
 
 
 setup ()
+
 sleep (1)
 thread = threading.Thread (target=takeInput)
 thread.start ()
+
 while (1):
+    
     frame = camera.veriOku ()
-    sleep (0.05)
+    camera.kareyiGoster()
+   
