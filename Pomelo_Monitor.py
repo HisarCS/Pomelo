@@ -1,6 +1,7 @@
 import pygame
 import sys
 from time import sleep
+import threading
 
 class Monitor:
 
@@ -80,9 +81,9 @@ class Monitor:
         sleep (duration)
 
 
-LCD = Monitor()
 
-while True:
+def lehim():
+    LCD = Monitor ()
     LCD.Clear_Screen()
     #camera must detect emotion
     # search emotion in list
@@ -100,3 +101,5 @@ while True:
                 LCD.Exit_FullScreen()
             if event.key == pygame.K_q: #if q key is pressed
                 LCD.Exit_Screen()
+
+thread = threading.Thread (target=lehim)

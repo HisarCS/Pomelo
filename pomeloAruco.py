@@ -1,4 +1,4 @@
-import cv2
+"""import cv2
 import cv2.aruco as aruco
 from time import sleep
 from pololu_drv8835_rpi import motors
@@ -7,11 +7,10 @@ import RPi.GPIO as GPIO
 import PiWarsTurkiyeRobotKiti2019
 from PiWarsTurkiyeRobotKiti2019 import HizlandirilmisPiKamera
 import pygame
-import sys
-#import Pomelo_Monitor 
+import sys"""
+import Pomelo_Monitor
 
 # sudo modprobe bcm2835-v4l2 //this makes picamera visible
-
 
 motors = PiWarsTurkiyeRobotKiti2019.MotorKontrol ()
 controller = PiWarsTurkiyeRobotKiti2019.Kumanda ()
