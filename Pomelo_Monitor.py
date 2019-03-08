@@ -16,20 +16,20 @@ class Monitor:
         self.Blink = []
         self.Emotions.append(self.Neutral_Happy2)
         self.Emotions.append(self.Blink)
-        self.emotion_number = 0
+        self.emotion_number = 1
         self.emotion_count = 0
         self.ongoing_emotion = 1
         self.Blinks()
-        self.Happy2s ()
+        self.Happys ()
         
 
     def Happys(self):
         for x in range (37):
-            self.Neutral_Happy2.append(pygame.image.load('./Pomelo_Face/Neutral-Happy2/Pomelo_Eyes_Neutral-Happy2.'+str(x)+'.jpeg'))
+            self.Neutral_Happy2.append(pygame.transform.scale(pygame.image.load('./Pomelo_Face/Neutral-Happy2/Pomelo_Eyes_Neutral-Happy2.'+str(x)+'.jpeg') , (480,272)))
 
     def Blinks(self):
         for x in range (37):
-            self.Blink.append(pygame.image.load('./Pomelo_Face/Blink/Pomelo_Eyes_Blink.'+str(x)+'.jpeg'))
+            self.Blink.append(pygame.transform.scale(pygame.image.load('./Pomelo_Face/Blink/Pomelo_Eyes_Blink.'+str(x)+'.jpeg'), (480, 272)))
 
     #setup finished
 
@@ -48,10 +48,10 @@ class Monitor:
     # display emotion
     def Blit_Face(self, emotion_number, emotion_count):
         self.screen.blit (self.Emotions[emotion_number][emotion_count], (0, 0))
-        self.Pause()
-        if self.emotion_count == 7:
+        self.Pause(0.00001)
+        if self.emotion_count == 36:
             self.emotion_count = -1
-            self.ongoing_emotion = 0
+            self.ongoing_emotion = 1
         else:
             self.ongoing_emotion = 1
 
@@ -76,8 +76,8 @@ class Monitor:
         sys.exit ()
 
     #code pauses of amount of seconds given
-    def Pause(self):
-        sleep (0.1)
+    def Pause(self, duration):
+        sleep (duration)
 
 
 LCD = Monitor()

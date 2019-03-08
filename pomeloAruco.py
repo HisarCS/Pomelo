@@ -8,7 +8,7 @@ import PiWarsTurkiyeRobotKiti2019
 from PiWarsTurkiyeRobotKiti2019 import HizlandirilmisPiKamera
 import pygame
 import sys
-import Pomelo_Monitor 
+#import Pomelo_Monitor 
 
 # sudo modprobe bcm2835-v4l2 //this makes picamera visible
 
@@ -20,7 +20,7 @@ xy = controller.solVerileriOku ()
 xz = controller.sagVerileriOku ()
 xx = controller.butonlariOku ()
 commands = []
-monitor = Monitor()
+
 
 
 def setup():
@@ -140,10 +140,10 @@ def takeInput():
 
 
 setup ()
-print(monitor.ongoing_emotion)
 sleep (1)
 thread = threading.Thread (target=takeInput)
 thread.start ()
+#monitor = Monitor()
 
 while (1):
     
