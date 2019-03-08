@@ -12,23 +12,24 @@ class Monitor:
         pygame.display.set_caption("Pomelo")
         #emotion setup
         self.Emotions = []
-        self.Happy1 =[]
-        self.Sad1 = []
-        self.Emotions.append(self.Happy1)
-        self.Emotions.append(self.Sad1)
+        self.Neutral_Happy2 =[]
+        self.Blink = []
+        self.Emotions.append(self.Neutral_Happy2)
+        self.Emotions.append(self.Blink)
         self.emotion_number = 0
         self.emotion_count = 0
         self.ongoing_emotion = 1
-        self.Happys ()
-        self.Sads()
+        self.Blinks()
+        self.Happy2s ()
+        
 
     def Happys(self):
-        for x in range (8):
-            self.Happy1.append(pygame.image.load('./Pomelo_Face/Happy1/Happy-'+str(x+1)+'.png'))
+        for x in range (37):
+            self.Neutral_Happy2.append(pygame.image.load('./Pomelo_Face/Neutral-Happy2/Pomelo_Eyes_Neutral-Happy2.'+str(x)+'.jpeg'))
 
-    def Sads(self):
-        for x in range (8):
-            self.Sad1.append(pygame.image.load('./Pomelo_Face/Sad1/Sad-'+str(x+1)+'.png'))
+    def Blinks(self):
+        for x in range (37):
+            self.Blink.append(pygame.image.load('./Pomelo_Face/Blink/Pomelo_Eyes_Blink.'+str(x)+'.jpeg'))
 
     #setup finished
 
@@ -40,7 +41,7 @@ class Monitor:
         if ongoing_emotion == 0:
             self.No_Emotion()
 
-    # when no emtion is displayed
+    # when no emotion is displayed
     def No_Emotion(self):
         self.screen.blit (self.Emotions[0][0], (0, 0))
 
