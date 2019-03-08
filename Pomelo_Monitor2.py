@@ -1,14 +1,18 @@
+import pomeloAruco
 import pygame
-import sys
-from time import sleep
-#import threading
+
+
 
 class Monitor:
 
     def __init__(self):
+        
         self.white=(255,255,255)
-        self.screen = pygame.display.set_mode ((480, 272), )
+        
+        self.screen = pygame.display.set_mode ((480, 272),)
+        print('dhdh')
         #monitor setup
+        
         pygame.init ()
         pygame.display.set_caption("Pomelo")
         #emotion setup
@@ -80,10 +84,11 @@ class Monitor:
     def Pause(self, duration):
         sleep (duration)
 
+pomeloAruco.setup()
+print('aaa')
+LCD = Monitor()
 
-
-def run_monitor():
-    LCD = Monitor ()
+while True:
     LCD.Clear_Screen()
     #camera must detect emotion
     # search emotion in list
@@ -102,4 +107,3 @@ def run_monitor():
             if event.key == pygame.K_q: #if q key is pressed
                 LCD.Exit_Screen()
 
-#batuhan yapma

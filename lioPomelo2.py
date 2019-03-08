@@ -1,3 +1,4 @@
+
 import cv2
 import cv2.aruco as aruco
 from time import sleep
@@ -6,20 +7,21 @@ import threading
 import RPi.GPIO as GPIO
 import PiWarsTurkiyeRobotKiti2019
 from PiWarsTurkiyeRobotKiti2019 import HizlandirilmisPiKamera
-
+import pygame
 import sys
-#import Pomelo_Monitor2
+import Pomelo_Monitor 
 
 # sudo modprobe bcm2835-v4l2 //this makes picamera visible
 
-motors = PiWarsTurkiyeRobotKiti2019.MotorKontrol
-controller = PiWarsTurkiyeRobotKiti2019.Kumanda()
-controller.dinlemeyeBasla()
-xy = controller.solVerileriOku()
-xz = controller.sagVerileriOku()
-xx = controller.butonlariOku()
+
+motors = PiWarsTurkiyeRobotKiti2019.MotorKontrol ()
+controller = PiWarsTurkiyeRobotKiti2019.Kumanda ()
+controller.dinlemeyeBasla ()
+xy = controller.solVerileriOku ()
+xz = controller.sagVerileriOku ()
+xx = controller.butonlariOku ()
 commands = []
-#monitor = Pomelo_Monitor.Monitor()
+
 
 
 def setup():
@@ -28,7 +30,7 @@ def setup():
     camera.veriOkumayaBasla ()
     aruco_dict = aruco.Dictionary_get (aruco.DICT_4X4_250)
     parameters = aruco.DetectorParameters_create ()
-    #motors.hizlariAyarla (0, 0)
+    motors.hizlariAyarla (0, 0)
     GPIO.setmode (GPIO.BCM)
     GPIO.setup (26, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     print(GPIO.input (26))
@@ -124,10 +126,12 @@ def takeInput():
             takePic ()
             
             run ()
-        while (xx != controller.butonlariOku () or xy != controller.sagVerileriOku() or xz != controller.solVerileriOku ()):
+        while (
+                xx != controller.butonlariOku () or xy != controller.sagVerileriOku () or xz != controller.solVerileriOku ()):
             lx, ly = controller.solVerileriOku ()
             print(lx, ly)
-            (rightSpeed, leftSpeed) = motors.kumandaVerisiniMotorVerilerineCevirme(lx, ly)
+            rightSpeed, leftSpeed = motors.kumandaVerisiniMotorVerilerineCevirme (lx, ly)
+            #leftSpeed = motors.kumandaVerisiniMotorVerilerineCevirme (lx, ly, False)
             print(lx, " ", ly, " ", rightSpeed, " ", leftSpeed)
             motors.hizlariAyarla (rightSpeed, leftSpeed)
             sleep (0.3)
@@ -135,7 +139,14 @@ def takeInput():
 
         sleep (0.2)
 
+
 setup ()
 sleep (1)
 thread = threading.Thread (target=takeInput)
 thread.start ()
+monitor = Pomelo_Monitor.Monitor()
+
+while (1):
+    
+    frame = camera.veriOku ()
+    camera.kareyiGoster()
