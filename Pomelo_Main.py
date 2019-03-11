@@ -6,7 +6,7 @@ import threading
 import RPi.GPIO as GPIO
 import PiWarsTurkiyeRobotKiti2019
 from PiWarsTurkiyeRobotKiti2019 import HizlandirilmisPiKamera
-import Pomelo_Monitor
+from Pomelo_Monitor import Monitor
 # sudo modprobe bcm2835-v4l2 //this makes picamera visible
 
 
@@ -131,7 +131,7 @@ def takeInput():
 
         sleep (0.2)
 
-LCD = Monitor()
+LCD = Pomelo_Monitor.Monitor()
 
 def Monitor_loop():
     LCD.Clear_Screen()
