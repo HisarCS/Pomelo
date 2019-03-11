@@ -26,8 +26,8 @@ pygame.display.set_caption ("Pomelo")
 Emotions = []
 Neutral_Happy2 = []
 Blink = []
-Road_to_sleep = []
-I_am_sleeping = []
+#Road_to_sleep = []
+#I_am_sleeping = []
 Emotions.append (Blink)
 Emotions.append (Neutral_Happy2)
 #Emotions.append(Road_to_sleep)
@@ -229,7 +229,6 @@ def Monitor_loop(elma, ongoing_emotion):
         else:
             ongoing_emotion = 1
         Update_Screen ()
-        pygame.display.update ()
         for event in pygame.event.get ():
             if event.type == pygame.QUIT:
                 Exit_Screen ()
@@ -248,11 +247,19 @@ Blinks ()
 #To_Sleep()
 #Sleeping()
 sleep (1)
+"""
 thread1 = threading.Thread (target=takeInput ())
 thread2 = threading.Thread (target=Monitor_loop (elma, ongoing_emotion))
-thread1.start ()
 thread2.start ()
+thread1.start ()
 
 while (1):
     frame = camera.veriOku ()
     # camera.kareyiGoster()
+"""
+thread1 = threading.Thread (target=takeInput)
+thread2 = threading.Thread (target=camera.veriOku())
+thread1.start ()
+thread2.start ()
+
+Monitor_loop(elma, ongoing_emotion)
