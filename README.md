@@ -10,15 +10,20 @@ Run these commands:
 cd ~  
 git clone https://github.com/HisarCS/pomelo  
 ```
-  
-## Step 3 - Make the script executable  
+## Step 3 - pololu_drv8835_rpi library
+You can install pololu_drv8835_rpi on your Raspberry Pi by following this guide:https://github.com/pololu/drv8835-motor-driver-rpi
+
+## Step 4 - Gasist library
+You can install Gasist on your Raspberry Pi by following this guide:https://github.com/shivasiddharth/GassistPi
+
+## Step 5 - Make the script executable  
 Run these commands:  
 ```
 cd ~/pomelo  
 chmod +x run.sh  
 ```
   
-## Step 4 - Run it!  
+## Step 6 - Run it!  
 Now you can execute the script by this command:
 ```
 ~/pomelo/run.sh  
