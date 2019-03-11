@@ -26,15 +26,15 @@ pygame.display.set_caption ("Pomelo")
 Emotions = []
 Neutral_Happy2 = []
 Blink = []
-#Road_to_sleep = []
+Road_to_sleep = []
 #I_am_sleeping = []
 Emotions.append (Blink)
 Emotions.append (Neutral_Happy2)
 #Emotions.append(Road_to_sleep)
 #Emotions.append(I_am_sleeping)
-emotion_number = 1
+emotion_number = 0
 elma = 0
-ongoing_emotion = 1
+ongoing_emotion = 0
 
 
 def setup():
@@ -54,13 +54,13 @@ def Happys():
         Neutral_Happy2.append (pygame.transform.scale (
             pygame.image.load ('./Pomelo_Face/Neutral-Happy2/Pomelo_Eyes_Neutral-Happy2.' + str (x) + '.jpeg'),
             (480, 272)))
-"""
+
 def To_Sleep():
-    for x in range (37):
+    for x in range (18):
         Road_to_sleep.append (pygame.transform.scale (
-            pygame.image.load ('./Pomelo_Face/To_Sleep/Pomelo_Eyes_To_Sleep.' + str (x) + '.jpeg'),
+            pygame.image.load ('./Pomelo_Face/To_Sleep/Pomelo_Eyes_GoToSleep.' + str (x) + '.jpeg'),
             (480, 272)))
-        
+"""        
 def Sleeping():
     for x in range (37):
         I_am_sleeping.append (pygame.transform.scale (
@@ -203,6 +203,7 @@ def run():
 def takeInput():
     while (1):
         y = GPIO.input (26)
+        thread
         if (y == True):
             print("button pressed")
             takePic ()
@@ -225,9 +226,9 @@ def Monitor_loop(elma, ongoing_emotion):
         elma = check_emotion (ongoing_emotion, emotion_number, elma)
         if elma == 36:
             elma = 0
-            ongoing_emotion = 1
+            ongoing_emotion = 0
         else:
-            ongoing_emotion = 1
+            ongoing_emotion = 0
         Update_Screen ()
         for event in pygame.event.get ():
             if event.type == pygame.QUIT:
@@ -244,7 +245,7 @@ def Monitor_loop(elma, ongoing_emotion):
 setup ()
 Happys ()
 Blinks ()
-#To_Sleep()
+To_Sleep()
 #Sleeping()
 sleep (1)
 """
