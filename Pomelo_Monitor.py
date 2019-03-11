@@ -78,3 +78,26 @@ class Monitor:
     #code pauses of amount of seconds given
     def Pause(self, duration):
         sleep (duration)
+
+
+
+LCD = Monitor()
+
+while (True):
+    LCD.Clear_Screen()
+    #camera must detect emotion
+    # search emotion in list
+    #emotion_number is = to emotions number in Emotions list
+    #LCD.ongoing_emotion = 1
+    LCD.check_emotion(LCD.ongoing_emotion, LCD.emotion_number, LCD.emotion_count)
+    LCD.Update_Screen()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            LCD.Exit_Screen()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_e: #if e key is pressed
+                LCD.Enter_FullScreen()
+            if event.key == pygame.K_x: #if x key is pressed
+                LCD.Exit_FullScreen()
+            if event.key == pygame.K_q: #if q key is pressed
+                LCD.Exit_Screen()

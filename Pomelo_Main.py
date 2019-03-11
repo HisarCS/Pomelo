@@ -1,22 +1,41 @@
-import cv2
 import cv2.aruco as aruco
-from time import sleep
-from pololu_drv8835_rpi import motors
+import cv2
+import sys
+import pygame
 import threading
-import RPi.GPIO as GPIO
-import PiWarsTurkiyeRobotKiti2019
+from PiWarsTurkiyeRobotKiti2019 import MotorKontrol
 from PiWarsTurkiyeRobotKiti2019 import HizlandirilmisPiKamera
-from Pomelo_Monitor import Monitor
+import RPi.GPIO as GPIO
+from time import sleep
+
 # sudo modprobe bcm2835-v4l2 //this makes picamera visible
 
 
-motors = PiWarsTurkiyeRobotKiti2019.MotorKontrol ()
-controller = PiWarsTurkiyeRobotKiti2019.Kumanda ()
-controller.dinlemeyeBasla ()
-xy = controller.solVerileriOku ()
-xz = controller.sagVerileriOku ()
-xx = controller.butonlariOku ()
+motors = MotorKontrol ()
+# controller = PiWarsTurkiyeRobotKiti2019.Kumanda ()
+# controller.dinlemeyeBasla ()
+# xy = controller.solVerileriOku ()
+# xz = controller.sagVerileriOku ()
+# xx = controller.butonlariOku ()
 commands = []
+
+white = (255, 255, 255)
+screen = pygame.display.set_mode ((480, 272), )
+pygame.init ()
+pygame.display.set_caption ("Pomelo")
+Emotions = []
+Neutral_Happy2 = []
+Blink = []
+Road_to_sleep = []
+I_am_sleeping = []
+Emotions.append (Blink)
+Emotions.append (Neutral_Happy2)
+#Emotions.append(Road_to_sleep)
+#Emotions.append(I_am_sleeping)
+emotion_number = 1
+elma = 0
+ongoing_emotion = 1
+
 
 def setup():
     global camera, aruco_dict, parameters
@@ -28,6 +47,77 @@ def setup():
     GPIO.setmode (GPIO.BCM)
     GPIO.setup (26, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     print(GPIO.input (26))
+
+
+def Happys():
+    for x in range (37):
+        Neutral_Happy2.append (pygame.transform.scale (
+            pygame.image.load ('./Pomelo_Face/Neutral-Happy2/Pomelo_Eyes_Neutral-Happy2.' + str (x) + '.jpeg'),
+            (480, 272)))
+"""
+def To_Sleep():
+    for x in range (37):
+        Road_to_sleep.append (pygame.transform.scale (
+            pygame.image.load ('./Pomelo_Face/To_Sleep/Pomelo_Eyes_To_Sleep.' + str (x) + '.jpeg'),
+            (480, 272)))
+        
+def Sleeping():
+    for x in range (37):
+        I_am_sleeping.append (pygame.transform.scale (
+            pygame.image.load ('./Pomelo_Face/To_Sleep/Pomelo_Eyes_Sleep.' + str (x) + '.jpeg'),
+            (480, 272)))
+"""
+def Blinks():
+    for x in range (37):
+        Blink.append (
+            pygame.transform.scale (pygame.image.load ('./Pomelo_Face/Blink/Pomelo_Eyes_Blink.' + str (x) + '.jpeg'),
+                                    (480, 272)))
+
+
+def check_emotion(ongoing_emotion, emotion_number, emotion_count):
+    if ongoing_emotion == 1:
+        Blit_Face (emotion_number, emotion_count)
+        emotion_count += 1
+    if ongoing_emotion == 0:
+        No_Emotion ()
+    return emotion_count
+
+
+def No_Emotion():
+    screen.blit (Emotions[0][0], (0, 0))
+
+
+def Blit_Face(emotion_number, emotion_count):
+    screen.blit (Emotions[emotion_number][emotion_count], (0, 0))
+
+    Pause (0.00001)
+
+
+# fill screen white
+def Clear_Screen():
+    screen.fill (white)
+
+
+def Update_Screen():
+    pygame.display.update ()
+
+
+# enter fullscreen
+def Enter_FullScreen():
+    screen = pygame.display.set_mode ((480, 272), pygame.FULLSCREEN)
+
+
+def Exit_FullScreen():
+    screen = pygame.display.set_mode ((480, 272), )
+
+
+def Exit_Screen():
+    pygame.quit ()
+    sys.exit ()
+
+
+def Pause(duration2):
+    sleep (duration2)
 
 
 def forward(duration):
@@ -59,7 +149,6 @@ def takePic():
     frame = camera.veriOku ()
 
     gray = cv2.cvtColor (frame, cv2.COLOR_BGR2GRAY)
-    
 
     ids = aruco.detectMarkers (gray, aruco_dict, parameters=parameters)[1]
 
@@ -72,43 +161,43 @@ def takePic():
     for i in ids:
         commands += i
         print(i)
-    return commands
+
     # if ids is not None and len(ids) > 0:print(ids.tolist()) #0, 18, 20, 39
 
 
-def run(commands):
+def run():
+    global commands
     duration = 1
-    if len(commands) >=1:
-        print(len(commands))
-        for i in range(len(commands)):
+    if len (commands) >= 1:
+        print(len (commands))
+        for i in range (len (commands)):
             print(i)
-            arucoNumber = commands[i] 
-            if len(commands)-1>i:
-                arucoNumberSecond = commands[i+1]
+            arucoNumber = commands[i]
+            if len (commands) - 1 > i:
+                arucoNumberSecond = commands[i + 1]
             else:
                 arucoNumberSecond = 1
                 print("no specified seconds")
             if arucoNumber == 12:
                 if arucoNumberSecond <= 10:
-                    duration = arucoNumberSecond 
+                    duration = arucoNumberSecond
                     print ("back", duration)
-                back (duration)  
+                back (duration)
             if arucoNumber == 11:
                 if arucoNumberSecond <= 10:
-                    duration = arucoNumberSecond  
+                    duration = arucoNumberSecond
                     print ("forward", duration)
                 forward (duration)
             if arucoNumber == 14:
                 if arucoNumberSecond <= 10:
-                    duration = arucoNumberSecond  
+                    duration = arucoNumberSecond
                 left (duration)
             if arucoNumber == 13:
                 if arucoNumberSecond <= 10:
-                    duration = arucoNumberSecond  
+                    duration = arucoNumberSecond
                     print ("right", duration)
                 right (duration)
             if arucoNumber == 15: duration = 3
-    
 
 
 def takeInput():
@@ -116,52 +205,54 @@ def takeInput():
         y = GPIO.input (26)
         if (y == True):
             print("button pressed")
-            commands = takePic ()
-            run (commands)
-            
-        while (xx != controller.butonlariOku () or xy != controller.sagVerileriOku () or xz != controller.solVerileriOku ()):
+            takePic ()
+            run ()
+        """while (xx != controller.butonlariOku () or xy != controller.sagVerileriOku () or xz != controller.solVerileriOku ()):
             lx, ly = controller.solVerileriOku ()
             print(lx, ly)
             rightSpeed, leftSpeed = motors.kumandaVerisiniMotorVerilerineCevirme (lx, ly)
-            #leftSpeed = motors.kumandaVerisiniMotorVerilerineCevirme (lx, ly, False)
             print(lx, " ", ly, " ", rightSpeed, " ", leftSpeed)
             motors.hizlariAyarla (rightSpeed, leftSpeed)
             sleep (0.3)
-            motors.hizlariAyarla (0, 0)
+            motors.hizlariAyarla (0, 0)"""
 
         sleep (0.2)
 
-LCD = Pomelo_Monitor.Monitor()
 
-def Monitor_loop():
-    LCD.Clear_Screen()
-    #camera must detect emotion
-    # search emotion in list
-    #emotion_number is = to emotions number in Emotions list
-    #LCD.ongoing_emotion = 1
-    LCD.check_emotion(LCD.ongoing_emotion, LCD.emotion_number, LCD.emotion_count)
-    LCD.Update_Screen()
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            LCD.Exit_Screen()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_e: #if e key is pressed
-                LCD.Enter_FullScreen()
-            if event.key == pygame.K_x: #if x key is pressed
-                LCD.Exit_FullScreen()
-            if event.key == pygame.K_q: #if q key is pressed
-                LCD.Exit_Screen()
-
-
-thread = threading.Thread (target=Monitor_loop)
+def Monitor_loop(elma, ongoing_emotion):
+    while (1):
+        Clear_Screen ()
+        elma = check_emotion (ongoing_emotion, emotion_number, elma)
+        if elma == 36:
+            elma = 0
+            ongoing_emotion = 1
+        else:
+            ongoing_emotion = 1
+        Update_Screen ()
+        pygame.display.update ()
+        for event in pygame.event.get ():
+            if event.type == pygame.QUIT:
+                Exit_Screen ()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_e:  # if e key is pressed
+                    Enter_FullScreen ()
+                if event.key == pygame.K_x:  # if x key is pressed
+                    Exit_FullScreen ()
+                if event.key == pygame.K_q:  # if q key is pressed
+                    Exit_Screen ()
 
 
 setup ()
+Happys ()
+Blinks ()
+#To_Sleep()
+#Sleeping()
 sleep (1)
-thread = threading.Thread (target=takeInput)
-thread.start ()
+thread1 = threading.Thread (target=takeInput ())
+thread2 = threading.Thread (target=Monitor_loop (elma, ongoing_emotion))
+thread1.start ()
+thread2.start ()
 
 while (1):
-    
     frame = camera.veriOku ()
-    camera.kareyiGoster()
+    # camera.kareyiGoster()
