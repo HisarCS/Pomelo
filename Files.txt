@@ -1,5 +1,0 @@
-Pomelo_Aruco is the working Aruco code
-Pomelo_Main is the code used to test merging Pomelo_monitor and Pomelo_Aruco
-Pomelo_Monitor is working but not on run
-Pomelo_Aruco_in_class_form is file used to convert Pomelo_Aruco code to a class
-
