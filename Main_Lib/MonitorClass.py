@@ -1,7 +1,7 @@
 import pygame
 import sys
 from time import sleep
-
+import cv2
 class Monitor:
 
     def __init__(self):
