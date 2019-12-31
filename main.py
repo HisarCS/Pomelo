@@ -13,7 +13,7 @@ Monitor = Main_Lib.Monitor()
 sleep(1)
 
 ArucoThread = threading.Thread(target=Aruco.takeInput, args=(lock, queue))
-MonitorThread = threading.Thread(target=Monitor.Loop, args=(lock))
+MonitorThread = threading.Thread(target=Monitor.Loop, args=(queue))
 
 ArucoThread.start()
 MonitorThread.start()
