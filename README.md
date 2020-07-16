@@ -11,28 +11,50 @@ Our future goals include implementing a voice assistant to further help students
 Code installation guide, 3D design, and electronic componenets can be found below. 
 
 ## Step 1 - Install OpenCV
-You can install OpenCV on your Raspberry Pi by following this guide: https://www.pyimagesearch.com/2018/09/19/pip-install-opencv/
+First you need to install the dependencies, so run these commands on the terminal:
+```
+sudo apt-get install libhdf5-dev libhdf5-serial-dev libhdf5-100
+sudo apt-get install libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libjasper-dev
+```
+Then you can install opencv using pip:
+```
+sudo pip3 install opencv-contrib-python==3.4.3.18
+```
 
-## Step 2 - Install pomelo
+Note: opencv versions that are 4.x are not compatible with the raspberrypi, and we need to install the opencv-contrib version of the library for some of the modules. So if you have it installed, uninstall it using
+```
+pip uninstall opencv-python
+```
+
+## Step 2- pololu_drv8835_rpi library
+For this library you have to install wiringpi:
+```
+sudo pip3 install wiringpi
+```
+Then run these commands to install the pololu_drv8835_rpi library:
+```
+git clone https://github.com/pololu/drv8835-motor-driver-rpi.git
+cd drv8835-motor-driver-rpi
+sudo python setup.py install
+```
+
+## Step 3- Install pomelo
 Run these commands:  
 ```
 cd ~  
 git clone https://github.com/HisarCS/pomelo  
 ```
-## Step 3 - pololu_drv8835_rpi library
-You can install pololu_drv8835_rpi on your Raspberry Pi by following this guide:https://github.com/pololu/drv8835-motor-driver-rpi
 
-## Step 4 - Gasist library
-You can install Gasist on your Raspberry Pi by following this guide:https://github.com/shivasiddharth/GassistPi
-
-## Step 5 - Make the script executable  
+## Step 4- Make the script executable  
 Run these commands:  
 ```
 cd ~/pomelo  
 chmod +x run.sh  
 ```
   
-## Step 6 - Run it!  
+## Step 5- Run it!  
 Now you can execute the script by this command:
 ```
 ~/pomelo/run.sh  
