@@ -28,7 +28,7 @@ Note: opencv versions that are 4.x are not compatible with the raspberrypi, and 
 pip uninstall opencv-python
 ```
 
-## Step 2- pololu_drv8835_rpi library
+## Step 2- Install pololu_drv8835_rpi library
 For this library you have to install wiringpi:
 ```
 sudo pip3 install wiringpi
@@ -39,22 +39,27 @@ git clone https://github.com/pololu/drv8835-motor-driver-rpi.git
 cd drv8835-motor-driver-rpi
 sudo python setup.py install
 ```
+## Step 3- Install Flask
+Run this command:  
+```
+sudo pip3 install Flask 
+```
 
-## Step 3- Install pomelo
+## Step 4- Install pomelo
 Run these commands:  
 ```
 cd ~  
 git clone https://github.com/HisarCS/pomelo  
 ```
 
-## Step 4- Make the script executable  
+## Step 5- Make the script executable  
 Run these commands:  
 ```
 cd ~/pomelo  
 chmod +x run.sh  
 ```
   
-## Step 5- Run it!  
+## Step 6- Run it!  
 Now you can execute the script by this command:
 ```
 ~/pomelo/run.sh  
