@@ -37,7 +37,7 @@ Then run these commands to install the pololu_drv8835_rpi library:
 ```
 git clone https://github.com/pololu/drv8835-motor-driver-rpi.git
 cd drv8835-motor-driver-rpi
-sudo python setup.py install
+sudo python3 setup.py install
 ```
 ## Step 3- Install Flask
 Run this command:  
